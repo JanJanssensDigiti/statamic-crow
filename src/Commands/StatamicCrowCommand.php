@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace digiti\StatamicCrow\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class StatamicCrowCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'statamic-crow';
 
     public $description = 'My command';
 
