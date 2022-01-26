@@ -1,12 +1,12 @@
 {
-    "name": "janjanssensdigiti/statamic-crow",
+    "name": "digiti/statamic-crow",
     "description": "A tool to make email templates in Statamic v3",
     "keywords": [
-        "JanJanssensDigiti",
+        "Digiti",
         "laravel",
         "statamic-crow"
     ],
-    "homepage": "https://github.com/janjanssensdigiti/statamic-crow",
+    "homepage": "https://github.com/digiti/statamic-crow",
     "license": "MIT",
     "authors": [
         {
