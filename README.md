@@ -1,9 +1,9 @@
 # A tool to make email templates in Statamic v3
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/janjanssensdigiti/statamic-crow.svg?style=flat-square)](https://packagist.org/packages/janjanssensdigiti/statamic-crow)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/janjanssensdigiti/statamic-crow/run-tests?label=tests)](https://github.com/janjanssensdigiti/statamic-crow/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/janjanssensdigiti/statamic-crow/Check%20&%20fix%20styling?label=code%20style)](https://github.com/janjanssensdigiti/statamic-crow/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
-[![Total Downloads](https://img.shields.io/packagist/dt/janjanssensdigiti/statamic-crow.svg?style=flat-square)](https://packagist.org/packages/janjanssensdigiti/statamic-crow)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/digiti/statamic-crow.svg?style=flat-square)](https://packagist.org/packages/digiti/statamic-crow)
+[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/digiti/statamic-crow/run-tests?label=tests)](https://github.com/digiti/statamic-crow/actions?query=workflow%3Arun-tests+branch%3Amain)
+[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/digiti/statamic-crow/Check%20&%20fix%20styling?label=code%20style)](https://github.com/digiti/statamic-crow/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
+[![Total Downloads](https://img.shields.io/packagist/dt/digiti/statamic-crow.svg?style=flat-square)](https://packagist.org/packages/digiti/statamic-crow)
 
 This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
 
@@ -62,7 +62,7 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 ## Credits
 
-- [Jan Janssens](https://github.com/JanJanssensDigiti)
+- [Jan Janssens](https://github.com/digiti)
 - [All Contributors](../../contributors)
 
 ## License

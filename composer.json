@@ -1,62 +1,19 @@
 {
-    "name": "digiti/statamic-crow",
-    "description": "A tool to make email templates in Statamic v3",
-    "keywords": [
-        "Digiti",
-        "laravel",
-        "statamic-crow"
-    ],
-    "homepage": "https://github.com/digiti/statamic-crow",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Jan Janssens",
-            "email": "jan.janssens@digiti.be",
-            "role": "Developer"
-        }
-    ],
-    "require": {
-        "php": "^8.0",
-        "spatie/laravel-package-tools": "^1.9.2",
-        "illuminate/contracts": "^8.73"
-    },
-    "require-dev": {
-        "nunomaduro/collision": "^5.10",
-        "orchestra/testbench": "^6.22",
-        "pestphp/pest": "^1.21",
-        "pestphp/pest-plugin-laravel": "^1.1",
-        "phpunit/phpunit": "^9.5",
-        "spatie/laravel-ray": "^1.26"
-    },
+    "name": "digiti/crow",
     "autoload": {
         "psr-4": {
-            "digiti\\StatamicCrow\\": "src",
-            "digiti\\StatamicCrow\\Database\\Factories\\": "database/factories"
+            "Digiti\\Crow\\": "src"
         }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "digiti\\StatamicCrow\\Tests\\": "tests"
-        }
-    },
-    "scripts": {
-        "analyse": "vendor/bin/phpstan analyse",
-        "test": "vendor/bin/pest",
-        "test-coverage": "vendor/bin/pest coverage"
-    },
-    "config": {
-        "sort-packages": true
     },
     "extra": {
+        "statamic": {
+            "name": "Crow",
+            "description": "Crow addon"
+        },
         "laravel": {
             "providers": [
-                "digiti\\StatamicCrow\\StatamicCrowServiceProvider"
-            ],
-            "aliases": {
-                "StatamicCrow": "digiti\\StatamicCrow\\Facades\\StatamicCrow"
-            }
+                "Digiti\\Crow\\ServiceProvider"
+            ]
         }
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+    }
 }
