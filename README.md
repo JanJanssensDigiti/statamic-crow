@@ -35,6 +35,7 @@ php artisan vendor:publish --tag=crow-layouts
 php artisan vendor:publish --tag=crow-partials
 php artisan vendor:publish --tag=crow-fieldsets
 php artisan vendor:publish --tag=crow-blueprints
+php artisan vendor:publish --tag=crow-collections
 ```
 
 ## Usage

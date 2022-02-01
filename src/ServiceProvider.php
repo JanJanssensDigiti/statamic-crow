@@ -38,7 +38,12 @@ class ServiceProvider extends AddonServiceProvider
         //Blueprints
         $this->publishes([
             __DIR__.'/../resources/blueprints/collections/email_templates/email_templates.yaml' => resource_path('blueprints/collections/email_templates/email_templates.yaml'),
-        ], 'crow-blueprints');  
+        ], 'crow-blueprints'); 
+        
+        //Collections
+        $this->publishes([
+            __DIR__.'/../resources/content/collections/email_templates.yaml' => base_path('content/collections/email_templates.yaml'),
+        ], 'crow-collections'); 
 
         //Config
         $this->publishes([
@@ -50,7 +55,7 @@ class ServiceProvider extends AddonServiceProvider
             __DIR__.'/../resources/views/partials/crow' => resource_path('views/partials/crow'),
         ], 'crow-partials');
 
-        //Fieldsets
+        //Layouts
         $this->publishes([
             __DIR__.'/../resources/views/email-layout-1.antlers.html' => resource_path('views/email-layout-1.antlers.html'),
             __DIR__.'/../resources/views/email-template.antlers.html' => resource_path('views/email-template.antlers.html')

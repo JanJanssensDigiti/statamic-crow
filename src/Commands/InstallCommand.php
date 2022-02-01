@@ -31,6 +31,7 @@ class InstallCommand extends Command
         Artisan::call('vendor:publish --tag=crow-partials');
         Artisan::call('vendor:publish --tag=crow-fieldsets');
         Artisan::call('vendor:publish --tag=crow-blueprints');
+        Artisan::call('vendor:publish --tag=crow-collections');
         $this->info('Copied all files');
 
         //Clear cache

@@ -1,0 +1,9 @@
+title: 'Email Templates'
+template: email-template
+layout: email-layout-1
+revisions: false
+route: '/email/{slug}'
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
