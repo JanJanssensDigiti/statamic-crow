@@ -1,0 +1,42 @@
+<?php
+
+namespace Digiti\Crow\Commands;
+
+use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Artisan;
+
+class InstallCommand extends Command
+{
+    public $signature = 'crow-install';
+
+    public $description = 'My command';
+
+    public function clean($path)
+    {
+        if (file_exists($path)) {
+            unlink($path);
+        }
+    }
+
+    public function handle()
+    {
+        //remove some files
+        //TODO: Provide clean script?
+        //Artisan::call('crow-clean');
+        //$this->info('Application cleaned');
+
+        //copy all files    
+        Artisan::call('vendor:publish --tag=crow-config');
+        Artisan::call('vendor:publish --tag=crow-layouts');
+        Artisan::call('vendor:publish --tag=crow-partials');
+        Artisan::call('vendor:publish --tag=crow-fieldsets');
+        Artisan::call('vendor:publish --tag=crow-blueprints');
+        $this->info('Copied all files');
+
+        //Clear cache
+        Artisan::call('optimize:clear');
+        $this->info('Cleared Cache');
+
+        $this->comment('All done!');
+    }
+}

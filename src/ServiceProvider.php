@@ -19,49 +19,61 @@ class ServiceProvider extends AddonServiceProvider
         __DIR__.'/../resources/js/main.js'
     ];
 
-    // protected $publishables = [
-    //     __DIR__.'/../resources/views/partials/crow' => resource_path('views/partials/crow'),
-    // ];
+    protected $commands = [
+        Commands\InstallCommand::class,
+        Commands\UpdateCommand::class,
+    ];
 
-    // public function bootPublishables()
-    // {
-    //     // parent::bootPublishables();
+    public function boot()
+    {
+        parent::boot();
 
-    //     // Statamic::booted(function () {
-    //     //     $this->bootAssets();
-    //     // });
-    // }    
+        Statamic::booted(function () {
+            $this->bootVendorAssets();
+        });
+    }    
 
-    // protected function bootAssets()
-    // {
-    //     $this->publishes([
-    //         __DIR__.'/../resources/blueprints/collections/email_templates/email_templates.yaml' => resource_path('blueprints/collections/email_templates/email_templates.yaml'),
-    //         __DIR__.'/../resources/views/partials/crow' => resource_path('views/partials/crow'),
-    //     ]);
+    protected function bootVendorAssets()
+    {
+        //Blueprints
+        $this->publishes([
+            __DIR__.'/../resources/blueprints/collections/email_templates/email_templates.yaml' => resource_path('blueprints/collections/email_templates/email_templates.yaml'),
+        ], 'crow-blueprints');  
 
-    //     // $this->publishes([
-    //     //     __DIR__.'/../config/simple-commerce.php' => config_path('simple-commerce.php'),
-    //     // ], 'simple-commerce-config');
+        //Config
+        $this->publishes([
+            __DIR__.'/../config/crow.php' => config_path('crow.php'),
+        ], 'crow-config');  
 
-    //     // $this->publishes([
-    //     //     __DIR__.'/../resources/blueprints' => resource_path('blueprints'),
-    //     // ], 'simple-commerce-blueprints');
+        //Partials
+        $this->publishes([
+            __DIR__.'/../resources/views/partials/crow' => resource_path('views/partials/crow'),
+        ], 'crow-partials');
 
-    //     // $this->publishes([
-    //     //     __DIR__.'/../resources/lang' => resource_path('lang/vendor/simple-commerce'),
-    //     // ], 'simple-commerce-translations');
+        //Fieldsets
+        $this->publishes([
+            __DIR__.'/../resources/views/email-layout-1.antlers.html' => resource_path('views/email-layout-1.antlers.html'),
+            __DIR__.'/../resources/views/email-template.antlers.html' => resource_path('views/email-template.antlers.html')
+        ], 'crow-layouts');
 
-    //     // $this->publishes([
-    //     //     __DIR__.'/../resources/views' => resource_path('views/vendor/simple-commerce'),
-    //     // ], 'simple-commerce-views');
+        //Fieldsets
+        $this->publishes([
+            __DIR__.'/../resources/fieldsets/crow-block_base_content.yaml' => resource_path('fieldsets/crow-block_base_content.yaml'),
+            __DIR__.'/../resources/fieldsets/crow-block_header.yaml' => resource_path('fieldsets/crow-block_header.yaml'),
+            __DIR__.'/../resources/fieldsets/crow-builder.yaml' => resource_path('fieldsets/crow-builder.yaml'),
+            __DIR__.'/../resources/fieldsets/crow-fieldset_button.yaml' => resource_path('fieldsets/crow-fieldset_button.yaml'),
+            __DIR__.'/../resources/fieldsets/crow-fieldset_column_builder.yaml' => resource_path('fieldsets/crow-fieldset_column_builder.yaml'),
+            __DIR__.'/../resources/fieldsets/crow-fieldset_column.yaml' => resource_path('fieldsets/crow-fieldset_column.yaml'),
+            __DIR__.'/../resources/fieldsets/crow-fieldset_description.yaml' => resource_path('fieldsets/crow-fieldset_description.yaml'),
+            __DIR__.'/../resources/fieldsets/crow-fieldset_features.yaml' => resource_path('fieldsets/crow-fieldset_features.yaml'),
+            __DIR__.'/../resources/fieldsets/crow-fieldset_image.yaml' => resource_path('fieldsets/crow-fieldset_image.yaml'),
+            __DIR__.'/../resources/fieldsets/crow-fieldset_shared_fields.yaml' => resource_path('fieldsets/crow-fieldset_shared_fields.yaml'),
+            __DIR__.'/../resources/fieldsets/crow-fieldset_spacer.yaml' => resource_path('fieldsets/crow-fieldset_spacer.yaml'),
+            __DIR__.'/../resources/fieldsets/crow-fieldset_title.yaml' => resource_path('fieldsets/crow-fieldset_title.yaml')
+        ], 'crow-fieldsets');
 
-    //     // if (app()->environment() !== 'testing') {
-    //     //     $this->mergeConfigFrom(__DIR__.'/../config/simple-commerce.php', 'simple-commerce');
-    //     // }
+        $this->mergeConfigFrom(__DIR__.'/../config/crow.php', 'crow');
 
-    //     // $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'simple-commerce');
-    //     // $this->loadViewsFrom(__DIR__.'/../resources/views', 'simple-commerce');
-
-    //     return $this;
-    // }
+        return $this;
+    }
 }

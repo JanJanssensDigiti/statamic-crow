@@ -15,38 +15,37 @@ You can install the package via composer:
 composer require digiti/statamic-crow
 ```
 
-You can publish and run the migrations with:
+Publish all assets with the command below
 
 ```bash
-php artisan vendor:publish --tag="statamic-crow-migrations"
-php artisan migrate
+php artisan crow-install
 ```
 
-You can publish the config file with:
+You can optionally clear the cache to make sure all assets are loaded in.
 
 ```bash
-php artisan vendor:publish --tag="statamic-crow-config"
+php artisan optimize:clear
 ```
 
-This is the contents of the published config file:
+## Updating
 
-```php
-return [
-];
-```
-
-Optionally, you can publish the views using
-
+If you are updating a current instance you can just run the install command to overwrite everything or run the update command to overwrite everything except your theming config.
 ```bash
-php artisan vendor:publish --tag="statamic-crow-views"
+php artisan crow-update
+```
+
+If you only want to update certain parts you can use one of the below commands to update the corresponding part.
+```bash
+php artisan vendor:publish --tag=crow-config
+php artisan vendor:publish --tag=crow-layouts
+php artisan vendor:publish --tag=crow-partials
+php artisan vendor:publish --tag=crow-fieldsets
+php artisan vendor:publish --tag=crow-blueprints
 ```
 
 ## Usage
+<!-- You can start making email templates in the collection "Email templates". Configure theming in the config/crow.php file. When you are done navigate to the corresponding template link and there you can copy the template to your clipboard to do whatever you want to do with it. -->
 
-```php
-$statamicCrow = new digiti\StatamicCrow();
-echo $statamicCrow->echoPhrase('Hello, digiti!');
-```
 
 ## Changelog
 
