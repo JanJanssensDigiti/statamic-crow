@@ -1,0 +1,10 @@
+{{ column }}
+
+  {{ 
+    partial src="crow/crow-partials/crow-{type}" 
+    :partial_index="index" 
+    :partial_first="first"
+    :partial_last="last"
+  }}
+
+{{ /column }}

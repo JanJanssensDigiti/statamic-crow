@@ -1,0 +1,24 @@
+title: 'Crow Fieldset: Features'
+fields:
+  -
+    handle: features
+    field:
+      collapse: false
+      sets:
+        feature:
+          display: feature
+          fields:
+            -
+              handle: description
+              field:
+                antlers: false
+                display: Description
+                type: textarea
+                icon: textarea
+                listable: hidden
+                instructions_position: above
+      display: Features
+      type: replicator
+      icon: replicator
+      listable: hidden
+      instructions_position: above

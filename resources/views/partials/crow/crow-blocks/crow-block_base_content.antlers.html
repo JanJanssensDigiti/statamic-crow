@@ -1,0 +1,63 @@
+<!-- Article-left-->
+<table border="0" width="100%" cellpadding="0" cellspacing="0" bgcolor="{{ config:crow:bg_mail }}" data-module="module7" data-thumb="thumbnails/module7.png">
+  <tbody>
+    <tr>
+      <td align="center" class="padding_20">
+          <table border="0" align="center" width="100%" bgcolor="{{ block_bg }}" style="width:100%; max-width:800px;" cellpadding="0" cellspacing="0" class="" data-bgcolor="White-Bg">
+              <tbody>
+                <tr><td height="{{ config:crow:section_padding }}" style="font-size: {{ config:crow:section_padding }}px; line-height: {{ config:crow:section_padding }}px;">&nbsp;</td></tr>
+                <tr>
+                  <td align="center">
+                      <table class="container600" width="600" align="center" border="0" cellpadding="0" cellspacing="0">
+                          <tr>
+                            <td>
+
+                                {{ columns }}
+
+                                  {{ if total_results == 3 and index == 0 }} 
+                                    <table 
+                                      class="container590" 
+                                      align="left" 
+                                      width="{{ crow:calculate_width :columns="total_results" multiply="2" add="10" }}" 
+                                      border="0" 
+                                      cellpadding="0" 
+                                      cellspacing="0" 
+                                      style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;"
+                                    >
+                                      <tbody>
+                                        <tr>
+                                          <td>
+                                  {{ /if }}
+                                  
+                                  <!-- Start Table -->
+                                  {{ partial src="crow/crow-partials/crow-table_start" }}
+                                      {{ partial src="crow/crow-partials/crow-column" :column_index="index" :column_count="total_results" }}
+                                  </table>
+                                  <!-- End Table -->
+
+                                  {{ if !last }}
+                                    {{ partial src="crow/crow-partials/crow-table_spacer" }}
+                                  {{ /if }}
+
+                                  {{ if total_results == 3 and index == 1 }} 
+                                          </td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  {{ /if }}
+
+                                {{ /columns }}
+
+                            </td>
+                          </tr> 
+                      </table>
+                  </td>
+                </tr>
+                <tr><td height="{{ config:crow:section_padding }}" style="font-size: {{ config:crow:section_padding }}px; line-height: {{ config:crow:section_padding }}px;">&nbsp;</td></tr>
+              </tbody>
+          </table>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<!-- end section -->

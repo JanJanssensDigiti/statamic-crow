@@ -1,0 +1,67 @@
+{{ if { crow:spacerCheck  } }}
+  <tr>
+    <td height="20" style="font-size: 20px; line-height: 20px;">&nbsp;</td>
+  </tr>
+{{ /if }}
+
+
+{{ if caption }}
+  <tr>
+    <td 
+      align="{{ align }}" 
+      mc:edit="list-title" 
+      style="
+        font-size: 12px; 
+        {{ if inverted }}
+          color: {{ config:crow:white_color }}; 
+        {{ else }}
+          color: {{ config:crow:primary_color }}; 
+        {{ /if }} 
+        font-weight: 500; 
+        line-height: 18px; 
+        font-family: {{ config:crow:font_family }}, sans-serif;" 
+      data-color="Colored Text" 
+      data-size="Colored Text" 
+      data-min="12" 
+      data-max="28"
+    >
+        <!-- ======= section text ====== -->
+        <div class="editable_text" style="line-height: 34px">
+            <span class="text_container">
+            <multiline>
+            {{ caption }}
+            </multiline>
+            </span>
+        </div>
+    </td>
+  </tr>
+{{ /if }}
+
+<tr>
+  <td 
+    align="{{ align }}" 
+    mc:edit="list-title" 
+    style="
+        font-family: {{ config:crow:font_family }}, sans-serif; 
+        font-size: 24px; 
+        font-weight: {{ config:crow:heading_weight }}; 
+        {{ if inverted }}
+          color: {{ config:crow:white_color }}; 
+        {{ else }}
+          color: {{ config:crow:heading_color }}; 
+        {{ /if }} 
+        line-height: 34px;" 
+      data-color="Headline" 
+      data-size="Headline" 
+      data-min="12" 
+      data-max="28">
+      <!-- ======= section text ====== -->
+      <div class="editable_text" style="line-height: 34px">
+          <span class="text_container">
+          <multiline>
+          {{ title }}
+          </multiline>
+          </span>
+      </div>
+  </td>
+</tr>

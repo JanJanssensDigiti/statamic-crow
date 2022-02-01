@@ -1,0 +1,29 @@
+{{ crow_blocks scope="block" }}
+    {{ if background == "light" }} 
+      {{ partial 
+        src="crow/crow-blocks/{block:type}" 
+        :block_index="index" 
+        :block_first="first"
+        :block_last="last"
+        :block_bg="config:crow:bg_grey"
+      }} 
+    {{ elseif background == "primary" }} 
+      {{ partial 
+        src="crow/crow-blocks/{block:type}" 
+        :block_index="index" 
+        :block_first="first"
+        :block_last="last"
+        :block_bg="config:crow:primary_color"
+        inverted="true"
+      }}  
+    {{ else }}
+      {{ partial 
+        src="crow/crow-blocks/{block:type}" 
+        :block_index="index" 
+        :block_first="first"
+        :block_last="last"
+        :block_bg="config:crow:bg_white"
+      }}   
+    {{ /if }}
+
+{{ /crow_blocks }}

@@ -1,0 +1,119 @@
+{{ if { crow:spacerCheck  } }}
+  <tr>
+    <td height="{{ config:crow:button_top_margin }}" style="font-size: {{ config:crow:button_top_margin }}px; line-height: {{ config:crow:button_top_margin }}px;">&nbsp;</td>
+  </tr>
+{{ /if }}
+
+<tr align="{{ align }}">
+  <td>
+      <!-- button -->
+      <table cellspacing="0" cellpadding="0">
+        <tr>
+          <td align="center">
+            <table 
+              border="0" 
+              align="center" 
+              width="
+                {{ if column_ratio == 2 and column_index == 0 }}
+                  {{ crow:calculate_width :width="width" columns="3" }}
+                {{ elseif column_ratio == 3 and column_index == 1 }}
+                  {{ crow:calculate_width :width="width" columns="3" }}
+                {{ else }}
+                  {{ crow:calculate_width :width="width" :columns="column_count" }}
+                {{ /if }}
+              " 
+              cellpadding="0" 
+              cellspacing="0" 
+              class="button_color button_border" 
+              {{ if theme == "standard" }} 
+                bgcolor="{{ config:crow:primary_color }}" 
+              {{ elseif theme == "standard-inverted" }}
+                bgcolor="{{ config:crow:white_color }}" 
+              {{ /if }} 
+              style="
+                border-collapse: initial; 
+                border-radius: {{ config:crow:button_border_radius }}px; 
+                box-shadow: {{ config:crow:button_shadow }}; 
+                {{ if theme == "standard" }} 
+                  background-color:{{ config:crow:primary_color }}; 
+                {{ elseif theme == "standard-inverted" }} 
+                  background-color:{{ config:crow:white_color }};
+                {{ elseif theme == "outline" }} 
+                  border: {{ config:crow:button_border_width }}px solid {{ config:crow:primary_color }}; 
+                {{ elseif theme == "outline-inverted" }}   
+                  border: {{ config:crow:button_border_width }}px solid {{ config:crow:white_color }}; 
+                {{ /if }}" 
+              data-bgcolor="Button1">
+              <tbody>
+                  <tr>
+                      <td height="15" style="font-size: 15px; line-height: 15px;">&nbsp;</td>
+                  </tr>
+              
+                  <tr>
+                      <td 
+                        align="center" 
+                        style="
+                          {{ if theme == "standard" }}   
+                            color:{{ config:crow:white_color }}; 
+                          {{ elseif theme == "standard-inverted" }}    
+                            color:{{ config:crow:primary_color }};
+                          {{ elseif theme == "outline" }} 
+                            color:{{ config:crow:primary_color }}; 
+                          {{ elseif theme == "outline-inverted" }}  
+                            color:{{ config:crow:white_color }};
+                          {{ /if }} 
+                          font-size: 14px; 
+                          font-family: {{ config:crow:button_top_margin }}, sans-serif; 
+                          font-weight: 500; 
+                          line-height: 20px;" 
+                        mc:edit="main-button"
+                      >
+                          <div class="editable_text" style="line-height: 20px;">
+                              <span class="text_container">
+                              <multiline>
+                                  <a 
+                                    href="{{ if link | contains:http }} {{ link }} {{ else }} {{ current_url :replace="current_uri" }}{{ link }} {{ /if }}" 
+                                    target="_blank" 
+                                    style="
+                                    {{ if theme == "standard" }}   
+                                      color:{{ config:crow:white_color }}; 
+                                    {{ elseif theme == "standard-inverted" }}    
+                                      color:{{ config:crow:primary_color }};
+                                    {{ elseif theme == "outline" }} 
+                                      color:{{ config:crow:primary_color }}; 
+                                    {{ elseif theme == "outline-inverted" }}  
+                                      color:{{ config:crow:white_color }};
+                                    {{ /if }}  
+                                      text-decoration: none;
+                                    " 
+                                    data-color="Button1">
+                                    <!--[if (gte mso 9)|(IE)]>
+                                    <font face="Arial">
+                                    <![endif]-->
+
+                                              {{ label }}
+
+                                              <!--[if (gte mso 9)|(IE)]>
+                                    </font>
+                                    <![endif]-->
+                                  </a>
+                              </multiline>
+                              </span>
+                          </div>
+                      </td>
+                      
+                  </tr>
+                                                                      
+                  <tr>
+                      <td height="15" style="font-size: 15px; line-height: 15px;">&nbsp;</td>
+                  </tr>
+          
+              </tbody>
+            </table>                              
+          </td>
+        </tr>
+      </table>
+      <!-- end button -->                        
+  </td>
+</tr>
+

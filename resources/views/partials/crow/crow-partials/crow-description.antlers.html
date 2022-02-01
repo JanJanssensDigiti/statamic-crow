@@ -1,0 +1,35 @@
+{{ if { crow:spacerCheck  } }}
+  <tr>
+    <td height="20" style="font-size: 20px; line-height: 20px;">&nbsp;</td>
+  </tr>
+{{ /if }}
+
+<tr>
+  <td 
+    align="{{ align }}" 
+    mc:edit="list-title" 
+    style="
+      font-family: {{ config:crow:font_family }}, sans-serif; 
+      font-size: 14px; 
+      font-weight: 400; 
+      {{ if inverted }}
+        color: {{ config:crow:white_color }}; 
+      {{ else }}
+        color: {{ config:crow:text_color }}; 
+      {{ /if }}  
+      line-height: 26px;" 
+    data-color="Text" 
+    data-size="Text" 
+    data-min="12" 
+    data-max="28"
+  >
+      <!-- ======= section text ====== -->
+      <div class="editable_text" style="line-height: 26px">
+        <span class="text_container">
+          <multiline>
+          {{ description }}
+          </multiline>
+          </span>
+      </div>
+  </td>
+</tr>

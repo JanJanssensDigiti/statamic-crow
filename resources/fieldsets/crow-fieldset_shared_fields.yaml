@@ -1,0 +1,30 @@
+title: 'Crow Fieldset: Shared fields'
+fields:
+  -
+    handle: general_Section
+    field:
+      display: General
+      type: section
+      icon: section
+      listable: hidden
+      instructions_position: above
+  -
+    handle: background
+    field:
+      options:
+        white: White
+        light: Light
+        primary: Primary
+      multiple: false
+      max_items: 1
+      clearable: false
+      searchable: false
+      taggable: false
+      push_tags: false
+      cast_booleans: false
+      default: white
+      display: Background
+      type: select
+      icon: select
+      listable: hidden
+      instructions_position: above

@@ -1,0 +1,22 @@
+title: 'Crow Fieldset: Title'
+fields:
+  -
+    handle: caption
+    field:
+      input_type: text
+      antlers: false
+      display: Caption
+      type: text
+      icon: text
+      listable: hidden
+      instructions_position: above
+  -
+    handle: title
+    field:
+      input_type: text
+      antlers: false
+      display: Title
+      type: text
+      icon: text
+      listable: hidden
+      instructions_position: above

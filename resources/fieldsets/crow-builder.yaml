@@ -1,0 +1,22 @@
+title: 'Crow Builder'
+fields:
+  -
+    handle: crow_blocks
+    field:
+      collapse: false
+      sets:
+        crow-block_header:
+          display: 'Crow Block: Header'
+          fields:
+            -
+              import: crow-block_header
+        crow-block_base_content:
+          display: 'Crow Block: Base Content'
+          fields:
+            -
+              import: crow-block_base_content
+      display: Content
+      type: replicator
+      icon: replicator
+      listable: hidden
+      instructions_position: above

@@ -1,0 +1,183 @@
+<!-- Main Header --> 
+<table border="0" width="100%" cellpadding="0" cellspacing="0" bgcolor="#F9FAFB" data-module="module1" data-thumb="thumbnails/module1.png">
+  <tbody>
+      <tr>
+          <td align="center" class="padding_20">
+
+            <!-- header-9-outlook-windows -->
+            <!--[if (gte mso 9)|(IE)]>
+            <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:800px;height:500px;">
+            <v:fill type="frame" src="{{ current_url :replace="current_uri" }}{{ glide:assets width="800" }}" color="#333333"></v:fill>
+            <v:textbox inset="0,0,0,0">
+            <![endif]-->
+
+            <table 
+              border="0" 
+              align="center" 
+              width="100%" 
+              style="width:100%; max-width:800px; background-image: url({{ current_url :replace="current_uri" }}{{ glide:assets width="800" }}); background-color: #516072; background-repeat: no-repeat; background-position: top center; background-size: cover;" 
+              cellpadding="0" 
+              cellspacing="0" 
+              bgcolor="#516072" 
+              background="{{ current_url :replace="current_uri" }}{{ glide:assets width="800" }}" 
+              data-bg="Background1" 
+              data-bgcolor="Background1"
+            >
+                <tbody>
+
+                  <!-- Header Nav -->
+                  <tr>
+                    <td align="center" data-bgcolor="Nav Background" style="width:100%; max-width:800px; background-image: url({{ current_url :replace="current_uri" }}{{ glide:assets width="800" }});  background-position: top center; background-size: cover;" cellpadding="0" cellspacing="0" background="{{ current_url :replace="current_uri" }}{{ glide:assets width="800" }}">
+                      <table border="0" align="center" width="590" style="" cellpadding="0" cellspacing="0" class="container600">
+                        <tbody>
+                          
+                          <tr><td height="30" style="font-size: 40px; line-height: 40px;">&nbsp;</td></tr>
+                          <tr>
+                              <td align="center" class="container600 center">
+                                  <table class="center" border="0" align="left" cellpadding="0" cellspacing="0" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;" >
+                                      <tbody><tr>
+                                          <td align="center">
+                                              <table border="0" cellpadding="0" cellspacing="0" align="center">
+                                                  <tbody><tr>
+                                                      <!-- ======= logo ======= -->
+                                                      <td align="center">
+                                                          <a href="{{ current_url :replace="current_uri" }}" target="_blank" style="display: block; border-style: none !important; border: 0 !important;" class="editable_img">
+                                                            {{ partial src="crow/crow-partials/crow-image" :assets="logo" :width="logo_width" border_radius="0" }}
+                                                          </a>
+                                                      </td>           
+                                                  </tr>
+                                              </tbody></table>        
+                                          </td>
+                                      </tr>
+                                  </tbody></table>
+                              </td>
+                              <td align="center" class="container600">  
+                                  <table border="0" align="left" width="5" cellpadding="0" cellspacing="0" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;" >
+                                      <tbody><tr><td height="20" width="5" style="font-size: 20px; line-height: 20px;">&nbsp;</td></tr>
+                                  </tbody></table>
+                              </td>
+                              <td align="center" class="container600">    
+                                  <table border="0" align="right" cellpadding="0" cellspacing="0" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+                                    <tbody><tr>
+                                        <td align="center">
+                                            <table align="center" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+                                                <tbody><tr> 
+                                                    <td align="center" class="hide" mc:edit="navigation" style="color: #FFFFFF; font-size: 12px; font-family:'Montserrat', {{ config:crow:font_family }}, sans-serif; line-height: 20px; font-weight:400; text-transform: uppercase;"  data-size="Nav menu" data-min="12" data-max="24">
+                                                      <!-- data-link-color, data-link-size & data-link-style -->
+                                                        <div class="editable_text" style="line-height: 20px;">
+                                                            <span class="text_container">
+                                                            <multiline>
+                                                              {{ navigation }}
+
+                                                                <a href="{{ if link | contains:http }} {{ link }} {{ else }} {{ current_url :replace="current_uri" }}{{ link }} {{ /if }}" target="_blank" style="font-family: {{ config:crow:font_family }}, Arial, Helvetica, sans-serif;color: #BFBFBF; text-decoration: none;" data-link-color="Nav menu">{{ label }}</a>
+      
+                                                                {{ if !last }} &nbsp;&nbsp;&nbsp;&nbsp; {{ /if }}
+      
+                                                              {{ /navigation }}
+
+                                                            </multiline>
+                                                            </span>
+                                                        </div>  
+                                                    </td>
+                                                </tr>
+                                            </tbody></table>
+                                        </td>
+                                    </tr>
+                                </tbody></table>
+                              </td>
+                          </tr>
+                          <tr><td height="30" style="font-size: 40px; line-height: 40px;">&nbsp;</td></tr>                              
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+                  <!-- end section -->
+
+                  <!-- Main Hero -->
+                  <tr>
+                    <td align="center">
+                      <table border="0" align="center" width="590" cellpadding="0" cellspacing="0" class="container500" data-bgcolor="Hero Center">
+                          <tbody>
+                              {{# <tr>
+                                  <td height="{{ config:crow:section_padding }}" style="font-size: {{ config:crow:section_padding }}px; line-height: {{ config:crow:section_padding }}px;">&nbsp;</td>
+                              </tr> #}}
+                              
+                              <tr><td height="20" class="hide" style="font-size: 20px; line-height: 20px;">&nbsp;</td></tr>
+
+                              <tr>
+                            <td align="center" mc:edit="big-title1" style="font-size: 14px; color: #BFBFBF; font-weight: 500; line-height: 18px; font-family: {{ config:crow:font_family }}, sans-serif; text-transform: uppercase;" data-color="Colored Text" data-size="Colored Text" data-min="12" data-max="28">
+                                <!-- ======= section text ====== -->
+                                
+                                <div class="editable_text" style="line-height: 24px">
+                                    <span class="text_container">
+                                    <multiline>
+                                        {{ caption }}
+                                    </multiline>
+                                    </span>
+                                </div>
+                            </td>   
+                          </tr>
+
+                          <tr>
+                                  <td height="5" style="font-size:5px; line-height: 5px;">&nbsp;</td>
+                              </tr>
+
+                              <tr>
+                                  <td align="center" mc:edit="big-title1" style="color: #FFFFFF; font-size: 40px; font-family: {{ config:crow:font_family }}, sans-serif; line-height: 40px; font-weight:{{ config:crow:heading_weight }};" class='main-section-header' data-size="Header title" data-max="72" data-color="Header title">
+                                      <!-- ======= section text ====== -->
+                                      
+                                      <div class='main-section-header' style="line-height: 40px">
+                                          <span class="text_container">
+                                          <multiline>
+                                              {{ title }}
+                                          </multiline>
+                                          </span>
+                                      </div>
+                                  </td>   
+                              </tr>
+
+                               <tr>
+                                  <td height="20" style="font-size:20px; line-height: 20px;">&nbsp;</td>
+                              </tr>
+
+                              <tr>
+                            <td align="center" mc:edit="list-title" style="font-family: {{ config:crow:font_family }}, sans-serif; font-size: 14px; font-weight: 500; color: #BFBFBF; line-height: 26px;" data-color="Text" data-size="Text" data-min="12" data-max="28">
+                                <!-- ======= section text ====== -->
+                                <div class="editable_text" style="line-height: 26px">
+                                  <span class="text_container">
+                                    <multiline>
+                                    {{ description }}
+                                    </multiline>
+                                  </span>
+                                </div>
+                            </td>
+                          </tr>
+                              
+                              <tr><td height="30" style="font-size: 30px; line-height: 30px;">&nbsp;</td></tr>
+
+                              <!-- button -->
+                              {{ buttons }}
+                                {{ partial src="crow/crow-partials/crow-button" width="280" align="center" }}
+                              {{ /buttons }} 
+                              <!-- end section -->
+
+                              <tr>
+                                  <td height="{{ config:crow:section_padding }}" style="font-size: {{ config:crow:section_padding }}px; line-height: {{ config:crow:section_padding }}px;">&nbsp;</td>
+                              </tr>
+
+                              <tr><td height="20" class="hide" style="font-size: 20px; line-height: 20px;">&nbsp;</td></tr>
+                          </tbody>
+                      </table>
+                    </td>
+                  </tr>
+                  <!-- end section -->
+
+                </tbody>
+            </table>
+
+            <!--[if (gte mso 9)|(IE)]></v:textbox></v:rect><![endif]-->
+          </td>
+      </tr>
+  </tbody>
+</table>
+<!-- end section -->

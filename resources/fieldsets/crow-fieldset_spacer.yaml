@@ -1,0 +1,13 @@
+title: 'Crow Fieldset: Spacer'
+fields:
+  -
+    handle: spacer_height
+    field:
+      min: 0
+      max: 100
+      step: 1
+      display: 'Spacer Height'
+      type: range
+      icon: range
+      listable: hidden
+      instructions_position: above

@@ -1,0 +1,42 @@
+title: 'Crow Fieldset: Button'
+fields:
+  -
+    handle: label
+    field:
+      input_type: text
+      antlers: false
+      display: Label
+      type: text
+      icon: text
+      listable: hidden
+      instructions_position: above
+  -
+    handle: link
+    field:
+      display: Link
+      type: link
+      icon: link
+      listable: hidden
+      instructions_position: above
+      allow_assets: true
+  -
+    handle: theme
+    field:
+      options:
+        standard: Standard
+        standard-inverted: 'Standard Inverted'
+        outline: Outline
+        outline-inverted: 'Outline Inverted'
+      multiple: false
+      max_items: 1
+      clearable: false
+      searchable: false
+      taggable: false
+      push_tags: false
+      cast_booleans: false
+      default: standard
+      display: Theme
+      type: select
+      icon: select
+      listable: hidden
+      instructions_position: above

@@ -1,0 +1,6 @@
+title: 'Crow Block: Base Content'
+fields:
+  -
+    import: crow-fieldset_column_builder
+  -
+    import: crow-fieldset_shared_fields

@@ -1,0 +1,11 @@
+title: 'Crow Fieldset: Description'
+fields:
+  -
+    handle: description
+    field:
+      antlers: false
+      display: Description
+      type: textarea
+      icon: textarea
+      listable: hidden
+      instructions_position: above
