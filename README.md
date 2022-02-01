@@ -21,12 +21,6 @@ Publish all assets with the command below
 php artisan crow-install
 ```
 
-You can optionally clear the cache to make sure all assets are loaded in.
-
-```bash
-php artisan optimize:clear
-```
-
 ## Updating
 
 If you are updating a current instance you can just run the install command to overwrite everything or run the update command to overwrite everything except your theming config.
