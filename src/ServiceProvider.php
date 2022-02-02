@@ -24,6 +24,10 @@ class ServiceProvider extends AddonServiceProvider
         Commands\UpdateCommand::class,
     ];
 
+    protected $publishables = [
+        __DIR__.'/../resources/images' => 'images',
+    ];
+
     public function boot()
     {
         parent::boot();

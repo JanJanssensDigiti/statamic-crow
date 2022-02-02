@@ -25,7 +25,8 @@ class InstallCommand extends Command
         //Artisan::call('crow-clean');
         //$this->info('Application cleaned');
 
-        //copy all files    
+        //copy all files  
+        Artisan::call('vendor:publish --tag=crow');  
         Artisan::call('vendor:publish --tag=crow-config');
         Artisan::call('vendor:publish --tag=crow-layouts');
         Artisan::call('vendor:publish --tag=crow-partials');

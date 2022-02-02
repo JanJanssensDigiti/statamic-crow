@@ -26,6 +26,7 @@ class UpdateCommand extends Command
         //$this->info('Application cleaned');
 
         //copy all files    
+        Artisan::call('vendor:publish --tag=crow');  
         Artisan::call('vendor:publish --tag=crow-layouts');
         Artisan::call('vendor:publish --tag=crow-partials');
         Artisan::call('vendor:publish --tag=crow-fieldsets');
