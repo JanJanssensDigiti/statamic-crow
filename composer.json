@@ -1,5 +1,5 @@
 {
-    "name": "digiti/crow",
+    "name": "digiti/statamic-crow",
     "autoload": {
         "psr-4": {
             "Digiti\\Crow\\": "src"
@@ -7,7 +7,7 @@
     },
     "extra": {
         "statamic": {
-            "name": "Crow",
+            "name": "Statamic Crow",
             "description": "Crow addon"
         },
         "laravel": {

@@ -23,5 +23,8 @@ return [
     'button_border_width'  => '2',
     'button_border_radius' => '35',
     
-    'image_border_radius'  => '10px'
+    'image_border_radius'  => '10px',
+
+    'icon_check_white'     => '/vendor/statamic-crow/images/icons/check-white.png',
+    'icon_check_grey'      => '/vendor/statamic-crow/images/icons/check-grey.png'
 ];
