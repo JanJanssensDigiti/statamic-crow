@@ -22,6 +22,7 @@ class ServiceProvider extends AddonServiceProvider
     protected $commands = [
         Commands\InstallCommand::class,
         Commands\UpdateCommand::class,
+        Commands\CleanCommand::class,
     ];
 
     protected $publishables = [
