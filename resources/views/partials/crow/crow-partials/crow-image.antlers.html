@@ -1,22 +1,9 @@
-<img 
-  class="resize"
-  width="
-  {{ if column_ratio == 2 and column_index == 0 }}
-    {{ crow:calculate_width :width="width" columns="3" multiply="2" add="10" }}px;
-  {{ elseif column_ratio == 2 and column_index == 1 }} 
-    {{ crow:calculate_width :width="width" columns="3" }}px;
-  {{ elseif column_ratio == 3 and column_index == 0 }} 
-    {{ crow:calculate_width :width="width" columns="3" }}px;
-  {{ elseif column_ratio == 3 and column_index == 1 }}
-    {{ crow:calculate_width :width="width" columns="3" multiply="2" add="10" }}px;
-  {{ else }}
-    {{ crow:calculate_width :width="width" :columns="column_count" }}px;
-  {{ /if }}
-  " 
-  alt="img" 
-  src="{{ current_url :replace="current_uri" }}{{ glide:assets :width="width" }}"
-  style="
-    width: 
+{{ if link }}
+  <a href="{{ link }}">
+{{ endif }}
+  <img 
+    class="resize"
+    width="
     {{ if column_ratio == 2 and column_index == 0 }}
       {{ crow:calculate_width :width="width" columns="3" multiply="2" add="10" }}px;
     {{ elseif column_ratio == 2 and column_index == 1 }} 
@@ -28,6 +15,25 @@
     {{ else }}
       {{ crow:calculate_width :width="width" :columns="column_count" }}px;
     {{ /if }}
-    height: {{ height }}px;
-    border-radius: {{ border_radius or config:crow:image_border_radius }}"
->
+    " 
+    alt="img" 
+    src="{{ current_url :replace="current_uri" }}{{ glide:assets :width="width" }}"
+    style="
+      width: 
+      {{ if column_ratio == 2 and column_index == 0 }}
+        {{ crow:calculate_width :width="width" columns="3" multiply="2" add="10" }}px;
+      {{ elseif column_ratio == 2 and column_index == 1 }} 
+        {{ crow:calculate_width :width="width" columns="3" }}px;
+      {{ elseif column_ratio == 3 and column_index == 0 }} 
+        {{ crow:calculate_width :width="width" columns="3" }}px;
+      {{ elseif column_ratio == 3 and column_index == 1 }}
+        {{ crow:calculate_width :width="width" columns="3" multiply="2" add="10" }}px;
+      {{ else }}
+        {{ crow:calculate_width :width="width" :columns="column_count" }}px;
+      {{ /if }}
+      height: {{ height }}px;
+      border-radius: {{ border_radius or config:crow:image_border_radius }}"
+  >
+{{ if link }}
+  </a>
+{{ endif }}
