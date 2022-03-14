@@ -2,10 +2,10 @@
     data-thumb="thumbnails/module34.png" border="0" width="100%" cellspacing="0" cellpadding="0"
     style="border-collapse: collapse;min-width: 100%;" bgcolor="{{ config:crow:bg_mail }}">
     <tr>
-        <td align="center">
+        <td align="center" class="padding_20">
 
             <table class="container-48" data-bgcolor="body" bgcolor="#181818" cellspacing="0" cellpadding="0"
-                border="0" style="border-collapse: collapse;width: 800px;min-width: 700px">
+                border="0" style="border-collapse: collapse;width:100%; max-width:800px;">
                 <tr>
                     <td height="20" style="height: 30px">&nbsp;</td>
                 </tr>
@@ -53,7 +53,7 @@
                                                                                         {{ if config:crow:facebook_link }}
                                                                                             <td valign="top" width="20">
                                                                                                 <a href="{{ config:crow:facebook_link }}" target="_blank">
-                                                                                                    {{ partial src="crow/crow-partials/crow-image" :assets="config:crow:icon_facebook_white" width="20" border_radius="0" }}
+                                                                                                    {{ partial src="crow/crow-partials/crow-image" :assets="config:crow:icon_facebook_white" width="20" border_radius="0" fixed="true" }}
                                                                                                 </a>
                                                                                             </td>
                                                                                             <td valign="top" width="15">&nbsp;</td>
@@ -62,7 +62,7 @@
                                                                                         {{ if config:crow:instagram_link }}
                                                                                             <td valign="top" width="20">
                                                                                                 <a href="{{ config:crow:instagram_link }}" target="_blank">
-                                                                                                    {{ partial src="crow/crow-partials/crow-image" :assets="config:crow:icon_instagram_white" width="20" border_radius="0" }}
+                                                                                                    {{ partial src="crow/crow-partials/crow-image" :assets="config:crow:icon_instagram_white" width="20" border_radius="0" fixed="true" }}
                                                                                                 </a>
                                                                                             </td>
                                                                                             <td valign="top" width="15">&nbsp;</td>
@@ -71,7 +71,7 @@
                                                                                         {{ if config:crow:twitter_link }}
                                                                                             <td valign="top" width="20">
                                                                                                 <a href="{{ config:crow:twitter_link }}" target="_blank">
-                                                                                                    {{ partial src="crow/crow-partials/crow-image" :assets="config:crow:icon_twitter_white" width="20" border_radius="0" }}
+                                                                                                    {{ partial src="crow/crow-partials/crow-image" :assets="config:crow:icon_twitter_white" width="20" border_radius="0" fixed="true" }}
                                                                                                 </a>
                                                                                             </td>
                                                                                             <td valign="top" width="15">&nbsp;</td>
@@ -80,7 +80,7 @@
                                                                                         {{ if config:crow:linkedin_link }}
                                                                                             <td valign="top" width="20">
                                                                                                 <a href="{{ config:crow:linkedin_link }}" target="_blank">
-                                                                                                    {{ partial src="crow/crow-partials/crow-image" :assets="config:crow:icon_linkedin_white" width="20" border_radius="0" }}
+                                                                                                    {{ partial src="crow/crow-partials/crow-image" :assets="config:crow:icon_linkedin_white" width="20" border_radius="0" fixed="true" }}
                                                                                                 </a>
                                                                                             </td>
                                                                                             <td valign="top" width="15">&nbsp;</td>
@@ -89,7 +89,7 @@
                                                                                         {{ if config:crow:youtube_link }}
                                                                                             <td valign="top" width="20">
                                                                                                 <a href="{{ config:crow:youtube_link }}" target="_blank">
-                                                                                                    {{ partial src="crow/crow-partials/crow-image" :assets="config:crow:icon_youtube_white" width="20" border_radius="0" }}
+                                                                                                    {{ partial src="crow/crow-partials/crow-image" :assets="config:crow:icon_youtube_white" width="20" border_radius="0" fixed="true" }}
                                                                                                 </a>
                                                                                             </td>
                                                                                             <td valign="top" width="15">&nbsp;</td>
@@ -98,7 +98,7 @@
                                                                                         {{ if config:crow:twitch_link }}
                                                                                             <td valign="top" width="20">
                                                                                                 <a href="{{ config:crow:twitch_link }}" target="_blank">
-                                                                                                    {{ partial src="crow/crow-partials/crow-image" :assets="config:crow:icon_twitch_white" width="20" border_radius="0" }}
+                                                                                                    {{ partial src="crow/crow-partials/crow-image" :assets="config:crow:icon_twitch_white" width="20" border_radius="0" fixed="true" }}
                                                                                                 </a>
                                                                                             </td>
                                                                                             <td valign="top" width="15">&nbsp;</td>
@@ -107,7 +107,7 @@
                                                                                         {{ if config:crow:github_link }}
                                                                                             <td valign="top" width="20">
                                                                                                 <a href="{{ config:crow:github_link }}" target="_blank">
-                                                                                                    {{ partial src="crow/crow-partials/crow-image" :assets="config:crow:icon_github_white" width="20" border_radius="0" }}
+                                                                                                    {{ partial src="crow/crow-partials/crow-image" :assets="config:crow:icon_github_white" width="20" border_radius="0" fixed="true" }}
                                                                                                 </a>
                                                                                             </td>
                                                                                             <td valign="top" width="15">&nbsp;</td>
@@ -163,7 +163,7 @@
                                                                                 <tbody>
                                                                                     <tr>
                                                                                         <td>
-                                                                                            {{ partial src="crow/crow-partials/crow-image" :assets="config:crow:footer_logo" :width="config:crow:footer_logo_width" border_radius="0" }}
+                                                                                            {{ partial src="crow/crow-partials/crow-image" :assets="config:crow:footer_logo" :width="config:crow:footer_logo_width" border_radius="0" fixed="true" }}
                                                                                         </td>
                                                                                     </tr>
                                                                                     {{ partial src="crow/crow-partials/crow-spacer" spacer_height="15" }}

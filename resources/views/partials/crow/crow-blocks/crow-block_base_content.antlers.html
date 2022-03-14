@@ -10,11 +10,10 @@
                   <td align="center">
                       <table class="container600" width="600" align="center" border="0" cellpadding="0" cellspacing="0">
                           <tr>
-                            <td>
+                              {{ columns }}
 
-                                {{ columns }}
-
-                                  {{ if total_results == 3 and index == 0 }} 
+                                {{ if total_results == 3 and index == 0 }} 
+                                  <td style="vertical-align: top;">
                                     <table 
                                       class="container590" 
                                       align="left" 
@@ -27,28 +26,34 @@
                                       <tbody>
                                         <tr>
                                           <td>
-                                  {{ /if }}
-                                  
-                                  <!-- Start Table -->
-                                  {{ partial src="crow/crow-partials/crow-table_start" }}
-                                      {{ partial src="crow/crow-partials/crow-column" :column_index="index" :column_count="total_results" }}
+                                {{ elseif index == 1 }}
+                                  <td align="right" style="vertical-align: top;">
+                                {{ else }}  
+                                  <td style="vertical-align: top;">
+                                {{ /if }}
+                                
+                                <!-- Start Table -->
+                                {{ partial src="crow/crow-partials/crow-table_start" }}
+                                    {{ partial src="crow/crow-partials/crow-column" :column_index="index" :column_count="total_results" }}
+                                {{ partial src="crow/crow-partials/crow-table_end" }}
+                                <!-- End Table -->
+
+                                <!-- Start Spacer -->
+                                {{ if !last }}
+                                  {{ partial src="crow/crow-partials/crow-table_spacer" }}
+                                {{ /if }}
+                                <!-- End Spacer -->
+
+                                {{ if total_results == 3 and index == 1 }} 
+                                        </td>
+                                      </tr>
+                                    </tbody>
                                   </table>
-                                  <!-- End Table -->
+                                {{ else }}
+                                  </td>
+                                {{ /if }}
 
-                                  {{ if !last }}
-                                    {{ partial src="crow/crow-partials/crow-table_spacer" }}
-                                  {{ /if }}
-
-                                  {{ if total_results == 3 and index == 1 }} 
-                                          </td>
-                                        </tr>
-                                      </tbody>
-                                    </table>
-                                  {{ /if }}
-
-                                {{ /columns }}
-
-                            </td>
+                              {{ /columns }}
                           </tr> 
                       </table>
                   </td>
