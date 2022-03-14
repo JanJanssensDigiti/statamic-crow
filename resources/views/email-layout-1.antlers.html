@@ -90,7 +90,12 @@
             <script class="remove" src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="crossorigin="anonymous"></script>
             <script class="remove">
                 $(document).ready(function(){
-        
+                    function removeElement($html, $element){
+                      if ( $html.find( $element ).length ) {
+                        $html.find( $element ).remove();
+                      }
+                    }
+
                     function copyToClipboard(input) {
                         var sampleTextarea = document.createElement("textarea");
                         document.body.appendChild(sampleTextarea);
@@ -103,13 +108,16 @@
                     function copyClipFunction() {
                         //Insert html in iframe and cleanup
                         var $allHtml = $('html').clone();
-                        $allHtml.find('.area').remove();
-                        $allHtml.find('.remove').remove(); 
-                        $allHtml.find('style:contains("button.btn")')[0].remove();
-                        $allHtml.find('input[type="file"]').remove();
-                        $allHtml.find('#scrnli_recorder_root').remove(); 
-                        $allHtml.find('.container_selected_area').remove();
-                        $allHtml.find('iframe[src*="chrome-extension"]').remove();
+                        removeElement($allHtml, '.area');
+                        removeElement($allHtml, '.remove');
+                        removeElement($allHtml, 'input[type="file"]');
+                        removeElement($allHtml, '#scrnli_recorder_root');
+                        removeElement($allHtml, '.container_selected_area');
+                        removeElement($allHtml, 'iframe[src*="chrome-extension"]');
+
+                        if ( $allHtml.find('style:contains("button.btn")')[0].length ) {
+                          $allHtml.find('style:contains("button.btn")')[0].remove();
+                        }
         
                         var allHtmlCode =  '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml">' + $allHtml.html() + "</html>";
                         copyToClipboard(allHtmlCode);
