@@ -2,12 +2,17 @@
   <a href="{{ link }}">
 {{ endif }}
   <img 
-    class="resize"
+    {{ if fixed == true }}
+      {{# INSERT OTHER CLASSES HERE #}}
+    {{ else }}
+      class="resize"
+    {{ /if }}
+    
     width="
     {{ if column_ratio == 2 and column_index == 0 }}
-      {{ crow:calculate_width :width="width" columns="3" multiply="2" add="10" }}px;
-    {{ elseif column_ratio == 2 and column_index == 1 }} 
       {{ crow:calculate_width :width="width" columns="3" }}px;
+    {{ elseif column_ratio == 2 and column_index == 1 }} 
+      {{ crow:calculate_width :width="width" columns="3" multiply="2" add="10" }}px;
     {{ elseif column_ratio == 3 and column_index == 0 }} 
       {{ crow:calculate_width :width="width" columns="3" }}px;
     {{ elseif column_ratio == 3 and column_index == 1 }}
@@ -21,9 +26,9 @@
     style="
       width: 
       {{ if column_ratio == 2 and column_index == 0 }}
-        {{ crow:calculate_width :width="width" columns="3" multiply="2" add="10" }}px;
-      {{ elseif column_ratio == 2 and column_index == 1 }} 
         {{ crow:calculate_width :width="width" columns="3" }}px;
+      {{ elseif column_ratio == 2 and column_index == 1 }} 
+        {{ crow:calculate_width :width="width" columns="3" multiply="2" add="10" }}px;
       {{ elseif column_ratio == 3 and column_index == 0 }} 
         {{ crow:calculate_width :width="width" columns="3" }}px;
       {{ elseif column_ratio == 3 and column_index == 1 }}
