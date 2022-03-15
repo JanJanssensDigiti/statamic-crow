@@ -35,6 +35,27 @@ class Crow extends Tags
         return round($cal * $multiply);
     }
 
+    public function alignCheck(){
+        $total_results = $this->context->get("total_results");
+        $index = $this->context->get("index");
+        $align = $this->context->get("align");
+
+        switch (true) {
+            case $total_results > 1 && $index == 0:
+                return "left";
+                break;
+            case $total_results > 1 && $index == 1:
+                return "right";
+                break;
+            case $total_results > 1 && $index == 2:
+                return "right";
+                break;
+            default:
+                return $align;
+                break;
+        }
+    }
+
     public function spacerCheck()
     {
         if($this->context->get("block")['type'] !== "crow-block_header")

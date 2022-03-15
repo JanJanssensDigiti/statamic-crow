@@ -8,12 +8,14 @@
                 <tr><td height="{{ config:crow:section_padding }}" style="font-size: {{ config:crow:section_padding }}px; line-height: {{ config:crow:section_padding }}px;">&nbsp;</td></tr>
                 <tr>
                   <td align="center">
+
                       <table class="container600" width="600" align="center" border="0" cellpadding="0" cellspacing="0">
                           <tr>
+                            <td>
                               {{ columns }}
 
                                 {{ if total_results == 3 and index == 0 }} 
-                                  <td style="vertical-align: top;">
+                                  {{# <td style="vertical-align: top;"> #}}
                                     <table 
                                       class="container590" 
                                       align="left" 
@@ -27,9 +29,9 @@
                                         <tr>
                                           <td>
                                 {{ elseif index == 1 }}
-                                  <td align="right" style="vertical-align: top;">
+                                  {{# <td align="right" style="vertical-align: top;"> #}}
                                 {{ else }}  
-                                  <td style="vertical-align: top;">
+                                  {{# <td style="vertical-align: top;"> #}}
                                 {{ /if }}
                                 
                                 <!-- Start Table -->
@@ -49,13 +51,18 @@
                                       </tr>
                                     </tbody>
                                   </table>
+                                  
+                                  {{ partial src="crow/crow-partials/crow-table_spacer" }}
+                                  {{# </td> #}}
                                 {{ else }}
-                                  </td>
+                                  {{# </td> #}}
                                 {{ /if }}
 
                               {{ /columns }}
+                            </td> 
                           </tr> 
                       </table>
+                      
                   </td>
                 </tr>
                 <tr><td height="{{ config:crow:section_padding }}" style="font-size: {{ config:crow:section_padding }}px; line-height: {{ config:crow:section_padding }}px;">&nbsp;</td></tr>

@@ -1,31 +1,27 @@
 <table 
     class="container590" 
-    align="
-        {{ if total_results > 1 and index == 0 }} 
-            left
-        {{ elseif total_results > 1 and index == 1 }} 
-            right 
-        {{ elseif total_results > 1 and index == 2 }} 
-            right
-        {{ else }} 
-            {{ align }} 
-        {{ /if }}
-    "
-    width="
-        {{ if total_results == 2 and column_ratio == 2 and index == 0 }} 
-            {{ crow:calculate_width columns="3" }}
-        {{ elseif total_results == 2 and column_ratio == 2 and index == 1 }} 
-            {{ crow:calculate_width columns="3" multiply="2" add="10" }} 
-        {{ elseif total_results == 2 and column_ratio == 3 and index == 0 }} 
-            {{ crow:calculate_width columns="3" multiply="2" add="10" }}
-        {{ elseif total_results == 2 and column_ratio == 3 and index == 1 }}
-            {{ crow:calculate_width columns="3" }}
-        {{ else }} 
-            {{ crow:calculate_width :columns="total_results" }}
-        {{ /if }}
-    " 
+    align="{{ crow:align_check }}"
+
+    {{# {{ if column_ratio == 2 or column_ratio == 3 }} #}}
+        width="{{ if total_results == 2 and column_ratio == 2 and index == 0 }}
+                {{ crow:calculate_width columns="3" }}
+            {{ elseif total_results == 2 and column_ratio == 2 and index == 1 }}
+                {{ crow:calculate_width columns="3" multiply="2" add="10" }}
+            {{ elseif total_results == 2 and column_ratio == 3 and index == 0 }}
+                {{ crow:calculate_width columns="3" multiply="2" add="10" }}
+            {{ elseif total_results == 2 and column_ratio == 3 and index == 1 }}
+                {{ crow:calculate_width columns="3" }}
+            {{ else }}
+                {{ crow:calculate_width :columns="total_results" }}
+            {{ /if }}" 
+    {{# {{ /if }} #}}
+
     border="0" 
     cellpadding="0" 
     cellspacing="0" 
-    style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;"
+    style="
+        border-collapse:collapse; 
+        mso-table-lspace:0pt; 
+        mso-table-rspace:0pt;
+    "
 >
