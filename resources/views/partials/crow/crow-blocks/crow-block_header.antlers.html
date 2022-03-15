@@ -64,14 +64,14 @@
                                         <td align="center">
                                             <table align="center" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;">
                                                 <tbody><tr> 
-                                                    <td align="center" class="hide" mc:edit="navigation" style="color: #FFFFFF; font-size: 12px; font-family:'Montserrat', {{ config:crow:font_family }}, sans-serif; line-height: 20px; font-weight:400; text-transform: uppercase;"  data-size="Nav menu" data-min="12" data-max="24">
+                                                    <td align="center" class="hide" mc:edit="navigation" style="color: {{ title_color or "#BFBFBF" }}; font-size: 12px; font-family:'Montserrat', {{ config:crow:font_family }}, sans-serif; line-height: 20px; font-weight:400; text-transform: uppercase;"  data-size="Nav menu" data-min="12" data-max="24">
                                                       <!-- data-link-color, data-link-size & data-link-style -->
                                                         <div class="editable_text" style="line-height: 20px;">
                                                             <span class="text_container">
                                                             <multiline>
                                                               {{ navigation }}
 
-                                                                <a href="{{ if link | contains:http }} {{ link }} {{ else }} {{ current_url :replace="current_uri" }}{{ link }} {{ /if }}" target="_blank" style="font-family: {{ config:crow:font_family }}, Arial, Helvetica, sans-serif;color: #BFBFBF; text-decoration: none;" data-link-color="Nav menu">{{ label }}</a>
+                                                                <a href="{{ if link | contains:http }} {{ link }} {{ else }} {{ current_url :replace="current_uri" }}{{ link }} {{ /if }}" target="_blank" style="font-family: {{ config:crow:font_family }}, Arial, Helvetica, sans-serif; color: {{ title_color or "#BFBFBF" }}; text-decoration: none;" data-link-color="Nav menu">{{ label }}</a>
       
                                                                 {{ if !last }} &nbsp;&nbsp;&nbsp;&nbsp; {{ /if }}
       
@@ -107,7 +107,7 @@
                               <tr><td height="20" class="hide" style="font-size: 20px; line-height: 20px;">&nbsp;</td></tr>
 
                               <tr>
-                            <td align="center" mc:edit="big-title1" style="font-size: 14px; color: #BFBFBF; font-weight: 500; line-height: 18px; font-family: {{ config:crow:font_family }}, sans-serif; text-transform: uppercase;" data-color="Colored Text" data-size="Colored Text" data-min="12" data-max="28">
+                            <td align="center" mc:edit="big-title1" style="font-size: 14px; color: {{ caption_color or "#BFBFBF" }}; font-weight: 500; line-height: 18px; font-family: {{ config:crow:font_family }}, sans-serif; text-transform: uppercase;" data-color="Colored Text" data-size="Colored Text" data-min="12" data-max="28">
                                 <!-- ======= section text ====== -->
                                 
                                 <div class="editable_text" style="line-height: 24px">
@@ -125,7 +125,7 @@
                               </tr>
 
                               <tr>
-                                  <td align="center" mc:edit="big-title1" style="color: #FFFFFF; font-size: 40px; font-family: {{ config:crow:font_family }}, sans-serif; line-height: 40px; font-weight:{{ config:crow:heading_weight }};" class='main-section-header' data-size="Header title" data-max="72" data-color="Header title">
+                                  <td align="center" mc:edit="big-title1" style="color: {{ title_color or "#FFFFFF" }}; font-size: 40px; font-family: {{ config:crow:font_family }}, sans-serif; line-height: 40px; font-weight:{{ config:crow:heading_weight }};" class='main-section-header' data-size="Header title" data-max="72" data-color="Header title">
                                       <!-- ======= section text ====== -->
                                       
                                       <div class='main-section-header' style="line-height: 40px">
@@ -143,7 +143,7 @@
                               </tr>
 
                               <tr>
-                            <td align="center" mc:edit="list-title" style="font-family: {{ config:crow:font_family }}, sans-serif; font-size: 14px; font-weight: 500; color: #BFBFBF; line-height: 26px;" data-color="Text" data-size="Text" data-min="12" data-max="28">
+                            <td align="center" mc:edit="list-title" style="font-family: {{ config:crow:font_family }}, sans-serif; font-size: 14px; font-weight: 500; color: {{ description_color or "#BFBFBF" }}; line-height: 26px;" data-color="Text" data-size="Text" data-min="12" data-max="28">
                                 <!-- ======= section text ====== -->
                                 <div class="editable_text" style="line-height: 26px">
                                   <span class="text_container">

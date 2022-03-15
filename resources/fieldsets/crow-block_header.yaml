@@ -67,6 +67,21 @@ fields:
       icon: text
       listable: hidden
       instructions_position: above
+      width: 75
+  -
+    handle: caption_color
+    field:
+      theme: classic
+      lock_opacity: false
+      default_color_mode: HEXA
+      color_modes:
+        - hex
+      display: 'Caption color'
+      type: color
+      icon: color
+      width: 25
+      listable: hidden
+      instructions_position: above
   -
     handle: title
     field:
@@ -75,6 +90,21 @@ fields:
       display: Title
       type: text
       icon: text
+      listable: hidden
+      instructions_position: above
+      width: 75
+  -
+    handle: title_color
+    field:
+      theme: classic
+      lock_opacity: false
+      default_color_mode: HEXA
+      color_modes:
+        - hex
+      display: 'Title Color'
+      type: color
+      icon: color
+      width: 25
       listable: hidden
       instructions_position: above
   -
@@ -102,6 +132,21 @@ fields:
       icon: bard
       listable: hidden
       instructions_position: above
+      width: 75
+  -
+    handle: description_color
+    field:
+      theme: classic
+      lock_opacity: false
+      default_color_mode: HEXA
+      color_modes:
+        - hex
+      display: 'Description color'
+      type: color
+      icon: color
+      listable: hidden
+      instructions_position: above
+      width: 25
   -
     handle: buttons
     field:
