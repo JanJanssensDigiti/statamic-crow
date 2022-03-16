@@ -9,6 +9,7 @@ return [
     //Colors
     'primary_color'        => '#e5154d', //to replace #e5154d
     'white_color'          => '#ffffff',
+    'dark_color'           => '#181818',
     'heading_color'        => '#516072',
     'text_color'           => '#8f96a1', 
     'bg_mail'              => '#F9FAFB',

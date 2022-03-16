@@ -1,0 +1,94 @@
+<table width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#F9FAFB">
+    <tbody>
+      <tr>
+          <td class="padding_20" align="center">
+              <table style="width:100%; max-width:800px; background-color: {{ block_bg }}" class="" width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="{{ block_bg }}" align="center">
+                <tbody>
+                  <tr>
+                    <td align="center">
+                      <table class="container590" width="590" cellspacing="0" cellpadding="0" border="0" align="center">
+                        <tbody>
+                          <tr><td style="font-size: 30px; line-height: 30px;" height="30">&nbsp;</td></tr>
+                          {{ if config:crow:footer_logo }}
+                              <tr>
+                                  <td>
+                                      <table
+                                          align="center"
+                                          border="0" 
+                                          cellpadding="0" 
+                                          cellspacing="0" 
+                                          width="100%"
+                                          style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;"
+                                      >
+                                          <tbody>
+                                              <tr>
+                                                  <td align="center">
+                                                      {{ partial src="crow/crow-partials/crow-image" :assets="config:crow:footer_logo" :width="config:crow:footer_logo_width" border_radius="0" fixed="true" }}
+                                                  </td>
+                                              </tr>
+                                              {{ partial src="crow/crow-partials/crow-spacer" spacer_height="15" }}
+                                          </tbody>
+                                      </table>
+                                  </td>
+                              </tr>
+                          {{ /if }}
+                          <tr>
+                            <td mc:edit="unsubscribe-link" style="color: #FFFFFF; font-size: 14px; font-family: 'Open Sans', sans-serif; line-height: 24px; font-weight: 500;" data-color="White Text" data-size="White Text" data-min="12" data-max="28" align="center">
+                              <div class="editable_text" style="line-height: 24px;">
+                                <span class="text_container">
+                                  <multiline>
+                                    Copyrigth  © {{ config:crow:copyright }}.<br> 
+                                  </multiline>
+
+                                    {{ if config:crow:web_version_label }}
+                                        <a style="font-size: 12px;font-family: {{ config:crow:font_family }}, Arial, Helvetica, sans-serif;text-decoration: none;color: #7b7b7b; margin:0px 5px;"
+                                            href="{{ current_url }}" target="_blank">
+                                            <!--[if (gte mso 9)|(IE)]>
+            <font face="Arial">
+            <![endif]-->
+
+                                            {{ config:crow:web_version_label }}
+                                        </a>
+                                    {{ /if }}
+
+                                    {{ if config:crow:unsubscribe_link }}
+                                        <a style="font-size: 12px;font-family: {{ config:crow:font_family }}, Arial, Helvetica, sans-serif;text-decoration: none;color: #7b7b7b; margin:0px 5px;"
+                                            href="{{ config:crow:unsubscribe_link }}" target="_blank">
+                                            <!--[if (gte mso 9)|(IE)]>
+    <font face="Arial">
+    <![endif]-->
+
+                                            <unsubscribe>{{ config:crow:unsubscribe_label }}
+                                            </unsubscribe>
+                                            <!--[if (gte mso 9)|(IE)]>
+    </font>
+    <![endif]-->
+                                        </a>
+                                    {{ /if }}
+
+                                    {{ if config:crow:forward_label }}
+                                        <a style="font-size: 12px;font-family: {{ config:crow:font_family }}, Arial, Helvetica, sans-serif;text-decoration: none;color: #7b7b7b; margin:0px 5px;"
+                                            href="mailto:Enter%20an%20email?subject=Your%20Subject%20Line&body=Thought%20you%20might%20be%20interested%20in%20this%20{{ current_url }}" target="_blank">
+                                            <!--[if (gte mso 9)|(IE)]>
+            <font face="Arial">
+            <![endif]-->
+
+                                            {{ config:crow:forward_label }}
+                                        </a>
+                                    {{ /if }}
+
+                                </span>
+                              </div>  
+                            </td>
+                          </tr>
+
+                          <tr><td style="font-size: 30px; line-height: 30px;" height="30">&nbsp;</td></tr>
+                      </tbody></table>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+          </td>
+      </tr>
+    </tbody>
+  </table>

@@ -1,0 +1,116 @@
+{{ if config:crow:facebook_link 
+  or config:crow:instagram_link 
+  or config:crow:twitter_link
+  or config:crow:linkedin_link
+  or config:crow:youtube_link
+  or config:crow:twitch_link 
+  or config:crow:github_link 
+}}
+
+<table width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#F9FAFB">
+    <tbody>
+      <tr>
+          <td class="padding_20" align="center">
+              <table style="width:100%; max-width:800px; background-color: {{ block_bg }}" class="" width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="{{ block_bg }}" align="center">
+                <tbody>
+                  {{ partial src="crow/crow-partials/crow-spacer" spacer_height="30" }}
+                  <tr>
+                    <td align="center">
+                      <table class="container590" width="590" cellspacing="0" cellpadding="0" border="0" align="center">
+                        <tbody>
+                          <tr>
+                            <td align="center">
+
+                              <table 
+                                  class="container590" 
+                                  {{# width="{{ crow:calculate_width columns="2" }}"  #}}
+                                  border="0" 
+                                  cellpadding="0" 
+                                  cellspacing="0" 
+                                  style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;"
+                              >
+                                    <tr>
+                                        <td>
+                                            <table cellpadding="0" cellspacing="0">
+                                                <tbody>
+                                                    <tr>
+                                                        {{ if config:crow:facebook_link }}
+                                                            <td valign="top" width="20">
+                                                                <a href="{{ config:crow:facebook_link }}" target="_blank">
+                                                                    {{ partial src="crow/crow-partials/crow-image" :assets="config:crow:icon_facebook_white" width="20" border_radius="0" fixed="true" }}
+                                                                </a>
+                                                            </td>
+                                                            <td valign="top" width="15">&nbsp;</td>
+                                                        {{ /if }}
+
+                                                        {{ if config:crow:instagram_link }}
+                                                            <td valign="top" width="20">
+                                                                <a href="{{ config:crow:instagram_link }}" target="_blank">
+                                                                    {{ partial src="crow/crow-partials/crow-image" :assets="config:crow:icon_instagram_white" width="20" border_radius="0" fixed="true" }}
+                                                                </a>
+                                                            </td>
+                                                            <td valign="top" width="15">&nbsp;</td>
+                                                        {{ /if }}
+
+                                                        {{ if config:crow:twitter_link }}
+                                                            <td valign="top" width="20">
+                                                                <a href="{{ config:crow:twitter_link }}" target="_blank">
+                                                                    {{ partial src="crow/crow-partials/crow-image" :assets="config:crow:icon_twitter_white" width="20" border_radius="0" fixed="true" }}
+                                                                </a>
+                                                            </td>
+                                                            <td valign="top" width="15">&nbsp;</td>
+                                                        {{ /if }}
+
+                                                        {{ if config:crow:linkedin_link }}
+                                                            <td valign="top" width="20">
+                                                                <a href="{{ config:crow:linkedin_link }}" target="_blank">
+                                                                    {{ partial src="crow/crow-partials/crow-image" :assets="config:crow:icon_linkedin_white" width="20" border_radius="0" fixed="true" }}
+                                                                </a>
+                                                            </td>
+                                                            <td valign="top" width="15">&nbsp;</td>
+                                                        {{ /if }}
+
+                                                        {{ if config:crow:youtube_link }}
+                                                            <td valign="top" width="20">
+                                                                <a href="{{ config:crow:youtube_link }}" target="_blank">
+                                                                    {{ partial src="crow/crow-partials/crow-image" :assets="config:crow:icon_youtube_white" width="20" border_radius="0" fixed="true" }}
+                                                                </a>
+                                                            </td>
+                                                            <td valign="top" width="15">&nbsp;</td>
+                                                        {{ /if }}
+
+                                                        {{ if config:crow:twitch_link }}
+                                                            <td valign="top" width="20">
+                                                                <a href="{{ config:crow:twitch_link }}" target="_blank">
+                                                                    {{ partial src="crow/crow-partials/crow-image" :assets="config:crow:icon_twitch_white" width="20" border_radius="0" fixed="true" }}
+                                                                </a>
+                                                            </td>
+                                                            <td valign="top" width="15">&nbsp;</td>
+                                                        {{ /if }}
+
+                                                        {{ if config:crow:github_link }}
+                                                            <td valign="top" width="20">
+                                                                <a href="{{ config:crow:github_link }}" target="_blank">
+                                                                    {{ partial src="crow/crow-partials/crow-image" :assets="config:crow:icon_github_white" width="20" border_radius="0" fixed="true" }}
+                                                                </a>
+                                                            </td>
+                                                            <td valign="top" width="15">&nbsp;</td>
+                                                        {{ /if }}
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                      </tr> 
+                              </table> 
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+          </td>
+      </tr>
+    </tbody>
+  </table>
+{{ /if }}     
