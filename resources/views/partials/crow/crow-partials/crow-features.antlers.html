@@ -26,9 +26,9 @@
                               <img 
                                 editable="true" 
                                 {{ if inverted }}
-                                  src="{{ config:crow:icon_check_white}}" 
+                                  src="{{ current_url :replace="current_uri" }}{{ config:crow:icon_check_white}}" 
                                 {{ else }}
-                                  src="{{ config:crow:icon_check_grey}}" 
+                                  src="{{ current_url :replace="current_uri" }}{{ config:crow:icon_check_grey}}" 
                                 {{ /if }} 
                                 alt="img" 
                                 width="25" 
