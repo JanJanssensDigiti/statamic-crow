@@ -2,11 +2,11 @@
 
 All notable changes to `statamic-crow` will be documented in this file.
 
-## 1.0.1 - 2022-04-13
+## 1.1.1 - 2022-04-13
 - Absolute urls for feature icons
 - Outlook background fix?
 - Fixed js error when copying the generated code
-## 1.0.0 - 2022-03-16
+## 1.1.0 - 2022-03-16
 - Copy script optimalization
 - odd-even & # column layout fix
 - Added rich texteditor for description fields
