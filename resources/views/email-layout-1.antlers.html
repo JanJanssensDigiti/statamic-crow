@@ -75,64 +75,60 @@
         {{ partial src="crow/crow-blocks/crow-block_footer" }}
     {{ /if }}
 
-    {{ if logged_in }}
-        {{ user }}
-          {{ if super == true }}
+      {{ if logged_in }}
+        <div class="toolbar remove" style="position: fixed; width: 200px; bottom:0px; left:0; right:0; margin:0 auto; background:#FFF; padding:10px; box-shadow: 0px -3px 3px 0 rgb(0 0 0 / 10%); border-top-left-radius: {{ config:crow:button_border_radius }}px; border-top-right-radius: {{ config:crow:button_border_radius }}px; text-align: center;">
             <div class="toolbar remove" style="position: fixed; width: 200px; bottom:0px; left:0; right:0; margin:0 auto; background:#FFF; padding:10px; box-shadow: 0px -3px 3px 0 rgb(0 0 0 / 10%); border-top-left-radius: {{ config:crow:button_border_radius }}px; border-top-right-radius: {{ config:crow:button_border_radius }}px; text-align: center;">
-                <div class="toolbar remove" style="position: fixed; width: 200px; bottom:0px; left:0; right:0; margin:0 auto; background:#FFF; padding:10px; box-shadow: 0px -3px 3px 0 rgb(0 0 0 / 10%); border-top-left-radius: {{ config:crow:button_border_radius }}px; border-top-right-radius: {{ config:crow:button_border_radius }}px; text-align: center;">
-                    <a href="#" onclick="" id="copy-to-clipboard" style="display:inline-block; font-size:14px; font-family: {{ config:crow:font_family }}, Arial, Helvetica, sans-serif;background-color: {{ config:crow:primary_color }}; color: #FFF; text-align:center; padding: 15px 20px; border-radius: {{ config:crow:button_border_radius }}px;">
-                        <img src="/vendor/statamic-crow/images/icons/clipboard-white.png" style=" display: inline-block; vertical-align:middle; width: 13px; margin-right:10px;"/>
-                        <p style="display: inline-block; vertical-align:middle; margin:0;">Copy to clipboard</p>
-                    </a>
-                </div>
+                <a href="#" onclick="" id="copy-to-clipboard" style="display:inline-block; font-size:14px; font-family: {{ config:crow:font_family }}, Arial, Helvetica, sans-serif;background-color: {{ config:crow:primary_color }}; color: #FFF; text-align:center; padding: 15px 20px; border-radius: {{ config:crow:button_border_radius }}px;">
+                    <img src="/vendor/statamic-crow/images/icons/clipboard-white.png" style=" display: inline-block; vertical-align:middle; width: 13px; margin-right:10px;"/>
+                    <p style="display: inline-block; vertical-align:middle; margin:0;">Copy to clipboard</p>
+                </a>
             </div>
-        
-            <script class="remove" src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="crossorigin="anonymous"></script>
-            <script class="remove">
-                $(document).ready(function(){
-                    function removeElement($html, $element){
-                      if ( $html.find( $element ).length ) {
-                        $html.find( $element ).remove();
-                      }
+        </div>
+    
+        <script class="remove" src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="crossorigin="anonymous"></script>
+        <script class="remove">
+            $(document).ready(function(){
+                function removeElement($html, $element){
+                  if ( $html.find( $element ).length ) {
+                    $html.find( $element ).remove();
+                  }
+                }
+
+                function copyToClipboard(input) {
+                    var sampleTextarea = document.createElement("textarea");
+                    document.body.appendChild(sampleTextarea);
+                    sampleTextarea.value = input; //save main text in it
+                    sampleTextarea.select(); //select textarea contenrs
+                    document.execCommand("copy");
+                    document.body.removeChild(sampleTextarea);
+                }
+                
+                function copyClipFunction() {
+                    //Insert html in iframe and cleanup
+                    var $allHtml = $('html').clone();
+                    removeElement($allHtml, '.area');
+                    removeElement($allHtml, '.remove');
+                    removeElement($allHtml, 'input[type="file"]');
+                    removeElement($allHtml, '#scrnli_recorder_root');
+                    removeElement($allHtml, '.container_selected_area');
+                    removeElement($allHtml, 'iframe[src*="chrome-extension"]');
+
+                    var $btnStyles = $allHtml.find('style:contains("button.btn")');
+                    if ( $btnStyles && $btnStyles.length && $btnStyles[0].length ) {
+                      $allHtml.find('style:contains("button.btn")')[0].remove();
                     }
 
-                    function copyToClipboard(input) {
-                        var sampleTextarea = document.createElement("textarea");
-                        document.body.appendChild(sampleTextarea);
-                        sampleTextarea.value = input; //save main text in it
-                        sampleTextarea.select(); //select textarea contenrs
-                        document.execCommand("copy");
-                        document.body.removeChild(sampleTextarea);
-                    }
-                    
-                    function copyClipFunction() {
-                        //Insert html in iframe and cleanup
-                        var $allHtml = $('html').clone();
-                        removeElement($allHtml, '.area');
-                        removeElement($allHtml, '.remove');
-                        removeElement($allHtml, 'input[type="file"]');
-                        removeElement($allHtml, '#scrnli_recorder_root');
-                        removeElement($allHtml, '.container_selected_area');
-                        removeElement($allHtml, 'iframe[src*="chrome-extension"]');
-
-                        var $btnStyles = $allHtml.find('style:contains("button.btn")');
-                        if ( $btnStyles && $btnStyles.length && $btnStyles[0].length ) {
-                          $allHtml.find('style:contains("button.btn")')[0].remove();
-                        }
-
-                        var allHtmlCode =  '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml">' + $allHtml.html() + "</html>";
-                        copyToClipboard(allHtmlCode);
-                    }
-                    
-                    window.copyClipFunction = copyClipFunction;
-        
-                    $("#copy-to-clipboard").click(function(){
-                        copyClipFunction();
-                    });
+                    var allHtmlCode =  '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml">' + $allHtml.html() + "</html>";
+                    copyToClipboard(allHtmlCode);
+                }
+                
+                window.copyClipFunction = copyClipFunction;
+    
+                $("#copy-to-clipboard").click(function(){
+                    copyClipFunction();
                 });
-            </script>
-          {{ /if }}
-        {{ /user }}
+            });
+        </script>
       {{ /if }}
 </body>
 

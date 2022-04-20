@@ -2,6 +2,9 @@
 
 All notable changes to `statamic-crow` will be documented in this file.
 
+## 1.1.2 - 2022-04-20
+- Removed bug where superusers only could see the 'copy to clipboard' button
+
 ## 1.1.1 - 2022-04-13
 - Absolute urls for feature icons
 - Outlook background fix?
